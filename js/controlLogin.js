@@ -9,7 +9,7 @@ app.controller('controlLogin', function($scope, $http, $auth,$state){
     $scope.Entrar=function(){
       console.log($scope.Dni);
 
-      $auth.login({correo:$scope.mail,nombre:$scope.nombre,clave:$scope.Clave})
+      $auth.login({correo:$scope.mail,nombre:$scope.nombre,clave:$scope.clave})
       .then(function(respuestaAuth){
          
         console.info(respuestaAuth);

@@ -4,8 +4,10 @@
 require '../vendor/autoload.php';
 
 //Clases
-require '../PHP/usuarios.php';
 require '../PHP/AccesoDatos.php';
+require '../PHP/usuarios.php';
+require '../PHP/productos.php';
+
 
 
 $app = new Slim\App();
@@ -49,7 +51,7 @@ $app->post('/Login[/]', function($request, $response, $args){
     $objDatos = json_decode($request->getBody());
 
     $objetoAccesoDato= AccesoDatos::dameUnObjetoAcceso();
-    $consulta=$objetoAccesoDato->RetornarConsulta("SELECT * FROM usuarios WHERE correo='$objDatos->correo' AND nombre='$objDatos->nombre' AND clave='$objDatos->clave'");
+    $consulta=$objetoAccesoDato->RetornarConsulta("SELECT * FROM misusuarios WHERE correo='$objDatos->correo' AND nombre='$objDatos->nombre' AND clave='$objDatos->clave'");
     $consulta->execute();
     $idUsuario=$consulta->fetchObject('usuario');
 
@@ -59,6 +61,7 @@ $app->post('/Login[/]', function($request, $response, $args){
         $token=array(
             "correo"=>$idUsuario->correo,
             "nombre"=>$idUsuario->nombre,
+            "tipo"=>$idUsuario->tipo,
             "exp"=>time() + 96000
         );
 
@@ -79,6 +82,32 @@ $app->post('/Login[/]', function($request, $response, $args){
 // });
 
 // FIN USUARIOS
+
+
+// PRODUCTOS
+
+$app->get('/traerProductos[/]', function ($request, $response, $args) {
+ $listado['listado']= producto::TraerTodosLosProductos();
+    $response->write(json_encode($listado));
+    return $response;
+});
+
+$app->post('/AltaProducto[/]', function($request, $response, $args){
+    $respuesta=json_decode($request->getBody());
+    var_dump('helou');
+ $unaPersona= producto::InsetarUnProducto($respuesta->datos->producto);
+
+ $response->write(var_dump($unaPersona));
+});
+
+$app->delete('/BorrarProducto/{data}', function($request, $response, $args){
+    
+    var_dump($args['data']); //Trae el dato
+    $unaPersona= producto::BorrarUnProducto($args['data']);
+    $response->write($args['data']);
+});
+
+// FIN PRODUCTOS
 
 
 

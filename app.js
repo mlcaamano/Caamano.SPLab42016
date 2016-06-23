@@ -35,6 +35,14 @@ app.config(function($stateProvider, $urlRouterProvider, $authProvider){
     }
   })
 
+  .state('grillaProductos', {
+    url: '/grillaProductos',
+    views: {
+      'menu': { templateUrl: 'templateMenu.html',controller: 'controlMenu' },
+      'contenido': {templateUrl: 'templateGrillaProducto.html',controller: 'controlGrillaProducto'}
+    }
+  })
+
   .state('altaUsuario', {
     url: '/altaUsuario',
     views: {
@@ -47,7 +55,7 @@ app.config(function($stateProvider, $urlRouterProvider, $authProvider){
     url: '/altaProducto',
     views: {
       'menu': { templateUrl: 'templateMenu.html',controller: 'controlMenu' },
-      'contenido': {templateUrl: 'templateAltaUsuario.html',controller: 'controlAltaProducto'}
+      'contenido': {templateUrl: 'TemplateAltaProducto.html',controller: 'controlAltaProducto'}
     }
   })
 

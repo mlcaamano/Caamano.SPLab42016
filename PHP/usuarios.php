@@ -26,6 +26,8 @@ class usuario
 	
 	public static function TraerUnUsuario($mail, $nombre ,$clave) 
 	{	
+
+		//vardump($mail);
 		$objetoAccesoDato= AccesoDatos::dameUnObjetoAcceso();
 		$consulta=$objetoAccesoDato->RetornarConsulta("SELECT * FROM misusuarios WHERE Dni='$dni' AND Clave='$clave'");
 		$consulta->execute();

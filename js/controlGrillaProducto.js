@@ -1,4 +1,4 @@
-app.controller('controlGrillaUsuario', function($scope, $http, factoryPersona) {
+app.controller('controlGrillaProducto', function($scope, $http, factoryPersona) {
     $scope.DatoTest="**grilla**";
   
 
@@ -19,26 +19,24 @@ app.controller('controlGrillaUsuario', function($scope, $http, factoryPersona) {
   // .then(bien, mal);
 
   factoryPersona.mostrarGrilla("otro").then(function(respuesta){
-    $scope.ListadoUsuarios=respuesta;
+    $scope.ListadoProductos=respuesta;
   });
 
 
 
-$scope.Borrar=function(usuario){
+$scope.Borrar=function(producto){
 
-    console.log(usuario);
+    console.log(producto);
 
-    var data = usuario.Dni;
+    var data = producto.id;
     
-    $http.delete('http://localhost:8080/PersonasFinal/Datos/BorrarUsuario/' +data)
+    $http.delete('http://localhost:8080/Caamano.SPLab42016/Datos/BorrarProducto/' +data)
    .then(function(respuesta) {       
            //aca se ejetuca si retorno sin errores        
            console.log(respuesta.data);
-           // $http.get('http://localhost/PersonasFinal/Datos/traerUsuarios/')
-           // .then(bien, mal);
 
              factoryPersona.mostrarGrilla("otro").then(function(respuesta){
-              $scope.ListadoUsuarios=respuesta;
+              $scope.ListadoProductos=respuesta;
              });
 
       },function errorCallback(response) {
@@ -77,7 +75,7 @@ app.service('servicioUsuario',function($http){
 var listado;
 
   this.retornarPersonas=function(){
-      return  $http.get('http://localhost:8080/PersonasFinal/Datos/traerUsuarios/')
+      return  $http.get('http://localhost:8080/Caamano.SPLab42016/Datos/traerProductos/')
         .then(function(respuesta) {       
 
           //$scope.ListadoPersonas = respuesta.data.listado;
