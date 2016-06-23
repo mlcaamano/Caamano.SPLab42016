@@ -13,7 +13,7 @@
                     <a class="navbar-brand" data-toggle="dropdown"><i class="fa fa-user"></i> {{UsuarioLogueado.nombre}} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <form class="contact_form" id="contact_form"  enctype="multipart/form-data" runat="server">
-                            <div>                       
+<!--                             <div>                       
                                 <li>
                                     <label for="dni">Ingrese contraseña nueva:</label> 
                                     <input type="password" name="dni" ng-model="clave.pass" value="" required />
@@ -23,7 +23,7 @@
                                     <input type="password" name="dni" ng-model="clave.confirmacion" value="" required />
                                 </li>
                                 <a class="btn btn-info " name="guardar" ng-click="Guardar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Guardar</a>
-                            </div>
+                            </div> -->
                         </form>
                         <li class="divider"></li>
                         <li>
@@ -40,7 +40,7 @@
                     <ul class="nav navbar-nav side-nav">
 
                         
-                        <div ng-if="UsuarioLogueado.tipo==administrador">
+                        <div ng-if="UsuarioLogueado.tipo=='administrador'">
                             <li>
                                 <a href="javascript:;" data-toggle="collapse" data-target="#empleados"><i class="fa fa-user"></i> Empleados <i class="fa fa-fw fa-caret-   down"></i></a>
                                 <ul id="empleados" class="collapse">
@@ -58,9 +58,11 @@
                             <a ui-sref="grillaProductos"><i class="fa fa-fw fa-table"></i>Grilla</a>
                         </li>
 
-                        <li>
-                            <a ui-sref="altaProducto"><i class="fa fa-fw fa-table"></i>Alta</a>
-                        </li>
+                        <div ng-if="UsuarioLogueado.tipo!='comprador'">
+                            <li>
+                                <a ui-sref="altaProducto"><i class="fa fa-fw fa-table"></i>Alta</a>
+                            </li>
+                        </div>
                       
                 </div>
             <!-- /.navbar-collapse -->

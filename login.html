@@ -6,26 +6,28 @@
 
       <div class="form__field">
         <label class="fontawesome-user" for="mail"><span class="hidden">Username</span></label>
-        <input id="mail" name="mail" type="text" class="form__input" placeholder="Mail"  ng-model="mail" required>
+        <input id="mail" name="mail" type="text" class="form__input" placeholder="Mail"  ng-model="mail">
       </div>
 
       <div class="form__field">
         <label class="fontawesome-user" for="nombre"><span class="hidden">Username</span></label>
-        <input id="nombre" name="nombre" type="text" class="form__input" placeholder="Nombre"  ng-model="nombre" required>
+        <input id="nombre" name="nombre" type="text" class="form__input" placeholder="Nombre"  ng-model="nombre">
       </div>      
 
       <div class="form__field">
         <label class="fontawesome-lock" for="clave"><span class="hidden">Password</span></label>
-        <input id="clave" name="clave" type="password" class="form__input" placeholder="Clave" ng-model="clave" required>
+        <input id="clave" name="clave" type="password" class="form__input" placeholder="Clave" ng-model="clave">
       </div>
 
       <div class="form__field">
         <input type="submit" ng-click="Entrar()" value="Sign In">
       </div>
 
-      <td><button class='btn btn-warning' name='Admin' ng-click="Admin"><span class='glyphicon glyphicon-edit'>&nbsp;</span>Admin</button></td>
-
-      <span>Login=> DNI:  33    /   Clave:  33</span>
+      <td><button class='btn btn-warning' name='Admin' ng-click="Admin()"><span class='glyphicon glyphicon-edit'>&nbsp;</span>Admin</button></td>
+      </br>
+      <td><button class='btn btn-warning' name='Vendedor' ng-click="Vend()"><span class='glyphicon glyphicon-edit'>&nbsp;</span>Vendedor</button></td>
+      </br>
+      <td><button class='btn btn-warning' name='Comprador' ng-click="Comp()"><span class='glyphicon glyphicon-edit'>&nbsp;</span>Comprador</button></td>
 
     </form>
 

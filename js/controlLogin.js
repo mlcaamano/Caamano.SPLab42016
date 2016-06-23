@@ -7,7 +7,7 @@ app.controller('controlLogin', function($scope, $http, $auth,$state){
   else
   {
     $scope.Entrar=function(){
-      console.log($scope.Dni);
+
 
       $auth.login({correo:$scope.mail,nombre:$scope.nombre,clave:$scope.clave})
       .then(function(respuestaAuth){
@@ -28,8 +28,26 @@ app.controller('controlLogin', function($scope, $http, $auth,$state){
       .catch(function(parametro){
         console.info("error", parametro);
       });
-    }    
-  }
+    }
 
+    $scope.Admin=function(){
+      $scope.mail= "admin@admin.com";
+      $scope.nombre="admin";
+      $scope.clave="321";
+    }  
+
+    $scope.Vend=function(){
+      $scope.mail= "vend@vend.com";
+      $scope.nombre="vend";
+      $scope.clave="321";
+    }         
+  
+
+    $scope.Comp=function(){
+      $scope.mail= "comp@comp.com";
+      $scope.nombre="comprador";
+      $scope.clave="123";
+    }         
+  }
 
 });
