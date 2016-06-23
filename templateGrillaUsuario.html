@@ -1,0 +1,49 @@
+<div id="page-wrapper">
+    <div class="container-fluid">
+
+		<div class="row">
+			<div class="col-lg-12">
+		    	<h1 class="page-header">
+			    	</br>
+			        Listado de empleados
+		   		</h1>
+			</div>
+
+			<input type="search" placeholder="Buscar persona..." ng-model="Mifiltro">
+			<input type="search" placeholder="Buscar Nombre.." ng-model="Qnombre"></input>
+			<input type="search" placeholder="Buscar Apellido.." ng-model="Qapellido"></input>
+
+			<table class='table table-hover table-responsive' id="listaPersonas">
+				<thead>
+					<tr>
+						<th>  Foto   	 </th>				
+						<th>  Dni        </th>
+						<th>  Apellido   </th>
+				    	<th>  Nombre     </th>
+				    	<th>  Borrar     </th>
+						<th>  Modificar	 </th>
+					</tr> 
+				</thead>
+
+	<!-- 			<tr ng-repeat="persona in ListadoPersonas | limitTo: 25 | orderBy: ['apellido', '-Nombre'] | filter:{Sueldo: '£':'hola'}:filtrarPorMoneda | filter:{$:mifiltro, Nombre: Qnombre, apellido: Qapellido} as resultado"> -->
+
+				<tr ng-repeat="usuario in ListadoUsuarios| orderBy: [Apellido] |filter:{$:Mifiltro, Nombres: Qnombre, Apellido: Qapellido} as resultado">
+					<td><img  class='fotoGrilla' ng-src="fotos/{{usuario.Foto}}" /></td>				
+					<td>{{usuario.Dni}}</td>
+					<td>{{usuario.Apellido}}</td>
+					<td>{{usuario.Nombres}}</td>
+					<td><button class='btn btn-warning' name='Borrar' ng-click="Borrar(usuario)"><span class='glyphicon glyphicon-edit'>&nbsp;</span>Borrar</button></td>
+					<td><button class='btn btn-warning' name='Modificar' ui-sref="modificarUsuario({dni:usuario.Dni, apellido: usuario.Apellido, nombres: usuario.Nombres, foto:usuario.Foto})"><span class='glyphicon glyphicon-edit'>&nbsp;</span>Modificar</button></td>
+				</tr>
+										
+				<tr ng-if="resultado.length==0">		
+					<td></td>
+					<td>No existen personas con esos datos</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

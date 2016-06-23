@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html>
+<head runat="server">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>SB Admin - Bootstrap Admin Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/StyleSheet.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script SRC="bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
+    <script type="text/javascript" src="bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
+    <script SRC="bower_components/angular-ui-router/release/angular-ui-router.min.js" TYPE="text/javascript"></script>
+    <script SRC="bower_components/satellizer/satellizer.min.js" TYPE="text/javascript"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid.js"></script>
+
+    <script SRC="app.js" TYPE="text/javascript"></script>
+    <link rel="stylesheet" href="css/estiloLogin.css">
+    <script src='bower_components/pdfmake/build/pdfmake.min.js'></script>
+    <script src='bower_components/pdfmake/build/vfs_fonts.js'></script>
+    <script SRC="js/validadora.js" TYPE="text/javascript"></script>
+
+    <!-- DIRECTIVAS -->
+    <script type="text/javascript" src="directivas/DirectivaBoton.js"></script>
+    <script type="text/javascript" src="directivas/ngThumb.js"></script>
+
+</head>
+
+<body ng-app="CGPAdinsa">
+
+
+    <div id="wrapper">
+
+        <div ui-view="menu">
+
+        </div>
+
+        <div ui-view="contenido">
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTROLADORES -->
+    <script SRC="js/controlAltaUsuario.js" TYPE="text/javascript"></script>
+    <script SRC="js/controlGrillaUsuario.js" TYPE="text/javascript"></script>
+    <script SRC="js/controlLogin.js" TYPE="text/javascript"></script>
+    <script SRC="js/controlMenu.js" TYPE="text/javascript"></script>
+    <script SRC="js/controlModificarUsuario.js" TYPE="text/javascript"></script>
+
+    <script SRC="js/controlAltaProducto.js" TYPE="text/javascript"></script>
+
+
+
+    <!-- FIN CONTROLADORES -->
+
+    <!-- SERVICES -->
+    <script SRC="js/serviceCargadorDeFotos.js" TYPE="text/javascript"></script>
+    <!-- FIN SERVICES -->
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+
+</body>
+
+</html>

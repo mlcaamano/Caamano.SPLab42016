@@ -1,0 +1,42 @@
+<div id="page-wrapper">
+    <div class="container-fluid">
+
+		<div class="row">
+			<div class="col-lg-12">
+		    	<h1 class="page-header">
+			    	</br>
+			        Planilla de usuarios
+				</h1>
+
+				<form class="contact_form" id="contact_form"  enctype="multipart/form-data" runat="server">
+					<div>
+						<ul>
+							<li>
+								<h2>Contactos</h2> 
+								<span class="required_notification">* Datos requeridos</span> 
+							</li>
+
+							<li>
+								<label for="nombres">Nombres:</label> 
+								<input type="text" name="nombres" onkeypress="return soloLetras(event);" ng-model="producto.nombre" placeholder="ingrese nombres" value="" required/> 
+								<span class="form_hint">Formato correcto: "Si aplica tambien segundo nombre"</span>
+							</li>
+							
+							<li>
+								<label for="nombres">Porcentaje:</label> 
+								<input type="text" name="nombres" onkeypress="return soloLetras(event);" ng-model="producto.porcentaje" placeholder="ingrese nombres" value="" required/> 
+								<span class="form_hint">Formato correcto: "Si aplica tambien segundo nombre"</span>
+							</li>							
+
+									
+							<boton-guardar> </boton-guardar>
+
+							<input type="hidden" value="" id="idParaModificar" name="agregar" />
+							<input type="hidden" value="" id="hdnAgregar" name="agregar" />
+						</ul>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

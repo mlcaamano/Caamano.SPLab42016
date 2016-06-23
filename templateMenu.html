@@ -1,0 +1,65 @@
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <p class="navbar-brand">Centro de control y gestion de proyectos</p>
+            </div>
+
+
+            <!-- Top Menu Items -->            
+            <!-- Lo del mail -->
+            <ul class="nav navbar-right top-nav">
+                 <li class="dropdown">
+                    <a class="navbar-brand" data-toggle="dropdown"><i class="fa fa-user"></i> {{UsuarioLogueado.nombre}} <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <form class="contact_form" id="contact_form"  enctype="multipart/form-data" runat="server">
+                            <div>                       
+                                <li>
+                                    <label for="dni">Ingrese contraseña nueva:</label> 
+                                    <input type="password" name="dni" ng-model="clave.pass" value="" required />
+                                </li>
+                                <li>
+                                    <label for="dni">Confirmar contraseña:</label> 
+                                    <input type="password" name="dni" ng-model="clave.confirmacion" value="" required />
+                                </li>
+                                <a class="btn btn-info " name="guardar" ng-click="Guardar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Guardar</a>
+                            </div>
+                        </form>
+                        <li class="divider"></li>
+                        <li>
+                            <a ng-click="Salir()"><i class="fa fa-fw fa-power-off"></i> Salir</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Fin Top Menu Items -->
+
+            <!-- Barra de costado -->
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav side-nav">
+
+                        <li>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#empleados"><i class="fa fa-user"></i> Empleados <i class="fa fa-fw fa-caret-   down"></i></a>
+                            <ul id="empleados" class="collapse">
+                                <li>
+                                    <a ui-sref="grillaUsuario"><i class="fa fa-fw fa-table"></i>Grilla</a>
+                                </li>
+                                <li>
+                                    <a ui-sref="altaUsuario"><i class="fa fa-fw fa-bar-chart-o"></i>Alta</a>
+                                </li>
+                            </ul>
+                        <li>
+                     
+                        <li>
+                            <a ui-sref="grillaproductos"><i class="fa fa-fw fa-table"></i>Grilla</a>
+                        </li>
+
+                        <li>
+                            <a ui-sref="altaProducto"><i class="fa fa-fw fa-table"></i>Alta</a>
+                        </li>
+                      
+                </div>
+            <!-- /.navbar-collapse -->
+
+        </nav>
