@@ -72,12 +72,12 @@ $app->post('/Login[/]', function($request, $response, $args){
     }
 });
 
-// $app->delete('/BorrarUsuario/{data}', function($request, $response, $args){
+$app->delete('/BorrarUsuario/{data}', function($request, $response, $args){
     
-//     var_dump($args['data']); //Trae el dato
-//     $unaPersona= usuario::BorrarUnUsuario($args['data']);
-//     $response->write($args['data']);
-// });
+    var_dump($args['data']); //Trae el dato
+    $unaPersona= usuario::BorrarUnUsuario($args['data']);
+    $response->write($args['data']);
+});
 
 // FIN USUARIOS
 

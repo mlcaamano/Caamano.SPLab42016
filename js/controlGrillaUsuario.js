@@ -19,28 +19,28 @@ app.controller('controlGrillaUsuario', function($scope, $http, factoryPersona) {
   $http.get('http://localhost:8080/Caamano.SPLab42016/Datos/traerUsuarios/', { params: {accion :"traerUsuarios"}})
   .then(bien, mal);
 
-// $scope.Borrar=function(usuario){
+$scope.Borrar=function(usuario){
 
-//     console.log(usuario);
+    console.log(usuario);
 
-//     var data = usuario.Dni;
+    var data = usuario.id;
     
-//     $http.delete('http://localhost:8080/Caamano.SPLab42016/Datos/BorrarUsuario/' +data)
-//    .then(function(respuesta) {       
-//            //aca se ejetuca si retorno sin errores        
-//            console.log(respuesta.data);
-//            // $http.get('http://localhost/PersonasFinal/Datos/traerUsuarios/')
-//            // .then(bien, mal);
+    $http.delete('http://localhost:8080/Caamano.SPLab42016/Datos/BorrarUsuario/' +data)
+   .then(function(respuesta) {       
+           //aca se ejetuca si retorno sin errores        
+           console.log(respuesta.data);
+           // $http.get('http://localhost/PersonasFinal/Datos/traerUsuarios/')
+           // .then(bien, mal);
 
-//              factoryPersona.mostrarGrilla("otro").then(function(respuesta){
-//               $scope.ListadoUsuarios=respuesta;
-//              });
+             $http.get('http://localhost:8080/Caamano.SPLab42016/Datos/traerUsuarios/', { params: {accion :"traerUsuarios"}})
+  .then(bien, mal);
 
-//       },function errorCallback(response) {
-//            $scope.ListadoPersonas= [];
-//           console.log( response);
-//      });
-// }
+      },function errorCallback(response) {
+           $scope.ListadoPersonas= [];
+          console.log( response);
+     });
+}
+
 });
 
 
