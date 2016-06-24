@@ -17,28 +17,25 @@
 							</li>
 
 							<li>
-								<label for="dni">DNI:</label> 
-								<input type="text" name="dni" onkeypress="return justNumbers(event);" ng-model="usuario.Dni" value="" required />
-								<span class="form_hint">Formato correcto: "Solo numeros"</span> 
+								<label for="correo">Correo:</label> 
+								<input type="text" name="correo" ng-model="usuario.correo" value="" required />
 							</li>
 
 							<li>
-								<label for="apellido">Apellido:</label> 
-								<input type="text" name="apellido" onkeypress="return soloLetras(event);" ng-model="usuario.Apellido" placeholder="ingrese apellido" value="" required/> 
-								<span class="form_hint">Formato correcto: "Si aplica tambien segundo nombre"</span>
-							</li>
-
-							<li>
-								<label for="nombres">Nombres:</label> 
-								<input type="text" name="nombres" onkeypress="return soloLetras(event);" ng-model="usuario.Nombres" placeholder="ingrese nombres" value="" required/> 
+								<label for="nombres">Nombre:</label> 
+								<input type="text" name="nombre" onkeypress="return soloLetras(event);" ng-model="usuario.nombre" placeholder="ingrese nombres" value="" required/> 
 								<span class="form_hint">Formato correcto: "Si aplica tambien segundo nombre"</span>
 							</li>
 							
-<!-- 							<li>
-								<label for="fechas">Fecha:</label> 
-								<input type="date" max="{{ maxDate() | date:'yyyy-MM-dd' }}" />
-								<span class="form_hint">Formato correcto: "Si aplica tambien segundo nombre"</span>
-							</li> -->
+							<li>
+								<label for="tipo">Acceso a la pagina:</label> 
+								<select name="tipo" ng-model="usuario.tipo" placeholder="Seleccione permisos del usuario" required>
+									<option>{{usuario.tipo}}</option>
+									<option>administrador</option>
+									<option>vendedor</option>
+									<option>comprador</option>
+								</select>
+							</li>
 
 						    <input type="file" nv-file-select uploader="uploader" ng-show="!uploader.queue[0]" class="btn btn-primary" ng-model="usuario.Foto" required multiple/><br/>
 					        

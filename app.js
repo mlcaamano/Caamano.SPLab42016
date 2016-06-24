@@ -60,7 +60,7 @@ app.config(function($stateProvider, $urlRouterProvider, $authProvider){
   })
 
   .state('modificarUsuario', {
-    url: '/modificarUsuario/{:dni}?:apellido:nombres:foto',
+    url: '/modificarUsuario/{:dni}?:apellido:nombres:tipo:foto',
     views: {
       'menu': { templateUrl: 'templateMenu.html',controller: 'controlMenu' },
       'contenido': {templateUrl: 'templateAltaUsuario.html',controller: 'controlModificarUsuario'}

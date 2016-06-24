@@ -46,7 +46,7 @@ class usuario
 	public static function InsetarUnUsuario($usuario)
 	{
 		$objetoAccesoDato=AccesoDatos::dameUnObjetoAcceso();
-		$consulta=$objetoAccesoDato->RetornarConsulta("INSERT into misusuarios (id, correo, nombre, clave, tipo, foto) VALUES ('$usuario->id', '$usuario->correo', '$usuario->nombre', '$usuario->nombre', '$usuario->tipo', '$usuario->foto')");
+		$consulta=$objetoAccesoDato->RetornarConsulta("INSERT into misusuarios (correo, nombre, clave, tipo, foto) VALUES ('$usuario->correo', '$usuario->nombre', '$usuario->nombre', '$usuario->tipo', '$usuario->Foto')");
 		$consulta->execute();
 		return $objetoAccesoDato->RetornarUltimoIdInsertado();				
 	}	

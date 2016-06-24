@@ -13,19 +13,17 @@ require '../PHP/productos.php';
 $app = new Slim\App();
 
 // INICIO USUARIOS
-// $app->get('/traerUsuarios[/]', function ($request, $response, $args) {
-// 	$listado['listado']= usuario::TraerTodosLosUsuarios();
-//     $response->write(json_encode($listado));
-//     return $response;
-// });
+$app->get('/traerUsuarios[/]', function ($request, $response, $args) {
+	$listado['listado']= usuario::TraerTodosLosUsuarios();
+    $response->write(json_encode($listado));
+    return $response;
+});
 
-// $app->post('/AltaUsuarios[/]', function($request, $response, $args){
-//     $respuesta=json_decode($request->getBody());
-//     var_dump('helou');
-// 	$unaPersona= usuario::InsetarUnUsuario($respuesta->datos->usuario);
-
-// 	$response->write(var_dump($unaPersona));
-// });
+$app->post('/AltaUsuarios[/]', function($request, $response, $args){
+    $respuesta=json_decode($request->getBody());
+	$unaPersona= usuario::InsetarUnUsuario($respuesta->datos->usuario);
+	$response->write(var_dump($unaPersona));
+});
 
 // $app->put('/ModificarUsuarios[/]', function($request, $response, $args){
 //     $respuesta=json_decode($request->getBody());
